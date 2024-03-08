@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang=en>
+<head>
+<title>TO-do-list</title>
+<style>
+
+h1{
+	color:#5eebf2;
+	text-align:center;
+}
+.input-div{
+	max-width:22rem;
+	background:transparent;
+	height:auto;
+	margin:0 auto;
+	color:#7bf556;
+	font-size:20px;
+}
+#taskInput{
+	width:90%;
+	padding:12px;
+	margin:4px;
+	background:transparent;
+	border:none;
+	border:3px  solid #99d1de;
+	border-radius:17px;
+	outline:none;
+}
+.btn{
+	width:90%;
+	padding:12px;
+	margin-top:4px;
+	margin-left:14px;
+	background-color:#8c8c77;
+	border:none;
+	border-bottom:5px solid #99d1de;
+	border-right:4px solid #99d1de;
+	border-radius:17px;
+	transition:.4s;
+	
+	&:hover{
+		background-color:#a6a697;
+		border:none;
+		color:#e3652b;
+	}
+}
+
+</style>
+</head>
+<body>
+
+<div class=input-div>
+<h1>To-do-list</h1>
+<form>
+	<input type=text id=taskInput placeholder="enter Text" required>
+	<input type=button class=btn onclick="addTask();" value="Add Task">
+</form>
+</div>
+<div class=input-div>
+	<ul id=list-container>
+	</ul>
+</div>
+<script>
+let input= document.getElementById("taskInput")
+let licontainer= document.getElementById("list-container")
+
+function addTask(){
+	let li= document.createElement('li');
+	let task=input.value;
+
+	li.innerHTML= task;
+	if(input.value!==""){
+	licontainer.appendChild(li)
+	}
+	else{
+			alert("Write something to add to-do-list")
+	}
+	input.value="";
+
+}
+
+</script>
+</body>
+
+</html>
