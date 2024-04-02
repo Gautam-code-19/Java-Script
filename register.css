@@ -10,7 +10,7 @@
 }
 .image-box {
   flex-basis: 62%;
-  object-fit: cover;
+  box-sizing: border-box;
   position: relative;
 }
 .image-box::before {
@@ -27,6 +27,7 @@
 }
 .image-box img {
   height: 100%;
+  object-fit: cover;
   width: 100%;
   filter: grayscale(9%);
   -webkit-filter: grayscale(9%);
@@ -102,4 +103,10 @@ input + .error::before {
   content: "";
   border-left: 3px solid;
   padding-right: 6px;
+}
+
+@media (max-width: 668px) {
+  .main-box {
+    flex-direction: column;
+  }
 }
