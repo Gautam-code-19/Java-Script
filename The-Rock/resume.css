@@ -1,0 +1,59 @@
+.form-group {
+  position: relative;
+  margin-bottom: 1rem; /* Adjust as needed */
+}
+
+input {
+  width: 100%;
+  padding: 1rem; 
+  border: 1.7px solid #acee86 !important; 
+  font-size: 1rem;
+  outline: none !important; 
+}
+
+label {
+  position: absolute;
+  left: 1.5rem;
+  top: 0.5rem;
+  color: #68f119;
+  transition: all 0.3s ease; 
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  font-size: 0.75rem !important;
+  transform: translateY(-1.5rem) scale(0.8) !important;
+  top: 0.25rem !important;
+}
+
+.nav-link {
+  font-size: 20px !important;
+}
+
+.active {
+  color: rgb(240, 155, 27) !important;
+}
+
+.btn-theme {
+  color: #fff;
+  background: linear-gradient(
+    259deg,
+    rgba(203, 131, 5, 0.9780287114845938) 27%,
+    rgba(237, 180, 79, 0.958420868347339) 96%
+  );
+  padding: 10px 30px;
+  :hover {
+    color: #fff !important;
+  }
+}
+
+
+.box-lg{
+    min-width:80%;
+   
+    background: #fff;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3);
+}
+.pageSecond{
+    display: none;
+}
