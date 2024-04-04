@@ -14,6 +14,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<script src="https://kit.fontawesome.com/1053bbc963.js" crossorigin="anonymous"></script>
 
+
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
 		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
 		crossorigin="anonymous"></script>
@@ -22,13 +23,12 @@
 		integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
 		crossorigin="anonymous"></script>
 
-
 </head>
 
 <body>
 	<div class='d-flex Main-section' style='width:100%;'>
 		<header>
-			<nav class="navbar navbar-expand-lg navbar-light ">
+			<nav class="navbar navbar-expand-lg navbar-light sticky ">
 				<div class="align-items-start">
 					<a class="navbar-brand" href="#" style='font-family: "Dr Sugiyama", cursive;'><i
 							class="fa-brands fa-instagram"></i> <img
@@ -55,16 +55,17 @@
 					<div>
 
 						<div class='d-flex text-center'>
-							<p class='px-2 small text-dark'>
-								<span style='display:inline-block;' class='text-md font-800 text-dark'>1550</span>Post
+							<p class='px-2 small text-dark-light'>
+								<span style='display:inline-block; font-size: 16px;'
+									class='text-md font-800 text-dark-light'>1550</span>Post
 							</p>
-							<p class='px-2 small text-dark'>
-								<span style='display:inline-block;'
-									class='text-md font-800 text-dark '>134M</span>Followers
+							<p class='px-2 small text-dark-light'>
+								<span style='display:inline-block; font-size: 16px;'
+									class='text-md font-800 text-dark-light'>134M</span>Followers
 							</p>
-							<p class='px-2 small text-dark '>
-								<span style='display:inline-block;'
-									class='text-md font-800 text-dark'>150</span>Followings
+							<p class='px-2 small text-dark-light'>
+								<span style='display:inline-block; font-size: 16px;'
+									class='text-md font-800 text-dark-light'>150</span>Followings
 							</p>
 						</div>
 
@@ -108,67 +109,116 @@
 		</header>
 
 
-		<div class=' main bg-light'>
+		<div class=' main '>
 
 			<div class='d-none d-md-flex  container justify-content-between align-items-center p-3'>
 
-				<div class='col-md-5'>
+				<div class=''>
 					<div class="input-group">
 						<div class="input-group-prepend">
-							<span class="input-group-text"><i class="fa-solid fa-magnifying-glass"
+							<span class="input-group-text bg-none"><i class="fa-solid fa-magnifying-glass"
 									style="color: #cacfd8;"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder='Search'
+						<input type="search" class="form-control input-search" placeholder='Search'
 							aria-label="Amount (to the nearest dollar)">
 					</div>
 				</div>
 
 				<div class='d-flex align-items-center'>
-					<a href='sw' class='theme-btn' title='Add Post'><i class="fa-solid fa-plus"
+					<a href='javascript:void(0)' class='theme-btn' title='Add Post'><i class="fa-solid fa-plus"
 							style="color: #ffffff;"></i> &nbsp; Create New</a>
 					<a><i class="head-action-btn fa-solid fa-podcast" style="color: #c5c9d3;"></i></a>
 					<a><i class="head-action-btn fa-solid fa-bell" style="color: #cacfd8;"></i></a>
+
 					<a><i class="head-action-btn fa-solid fa-gear" style="color: #adb3bd;"></i></a>
 				</div>
 			</div>
 
 			<!-- Stories Section-->
 			<div class='story d-flex container flex-wrap flex-md-nowrap'>
-				<div style='width:170%;'>
+				<div class="main-container">
 
 					<div class='d-flex justify-content-between align-items-center'>
-						<h2 class='text-muted h4'>Stories</h2>
-						<button class='btn text-muted'>View All</button>
+						<h2 class='text-muted head-md font-800'>Stories</h2>
+						<button class='btn text-muted head-md font-700'>View All</button>
 					</div>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-							<div class='d-flex flex-wrap flex-md-nowrap'>
 
 
-								<div class='single-box mx-auto'>
-									<img class=card-img-top
+					<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+
+								<div class="d-flex d-block w-100" style="gap:2%; height: 190px;">
+
+									<img class='carousel-img'
+										src='https://i.pinimg.com/originals/78/cf/d8/78cfd8f4d7e21c49ef5e9a90cd1508a3.jpg'
+										alt='stories' title='Story'>
+									<img class=carousel-img
+										src='https://i.pinimg.com/originals/78/cf/d8/78cfd8f4d7e21c49ef5e9a90cd1508a3.jpg'
+										alt='stories' title='Story'>
+									<img class=carousel-img
+										src='https://i.pinimg.com/originals/78/cf/d8/78cfd8f4d7e21c49ef5e9a90cd1508a3.jpg'
+										alt='stories' title='Story'>
+									<img class=carousel-img
 										src='https://i.pinimg.com/originals/78/cf/d8/78cfd8f4d7e21c49ef5e9a90cd1508a3.jpg'
 										alt='stories' title='Story'>
 
 								</div>
+							</div>
+							<div class="carousel-item  ">
 
-								<div class='single-box mx-auto'>
+								<div class="d-flex d-block w-100" style="gap:2%;">
 
-									<img class='card-img-top img-fluid'
+									<img class=carousel-img
+										src='https://wallpapers.com/images/featured/the-rock-bo8k669j2xtbay1c.jpg'
+										alt='stories' title='Story'>
+									<img class=carousel-img
+										src='https://wallpapers.com/images/featured/the-rock-bo8k669j2xtbay1c.jpg'
+										alt='stories' title='Story'>
+									<img class=carousel-img
+										src='https://wallpapers.com/images/featured/the-rock-bo8k669j2xtbay1c.jpg'
+										alt='stories' title='Story'>
+									<img class=carousel-img
 										src='https://wallpapers.com/images/featured/the-rock-bo8k669j2xtbay1c.jpg'
 										alt='stories' title='Story'>
 
 								</div>
 
-								<div class='single-box mx-auto'>
-
-									<img class=card-img-top
-										src='https://d3lzcn6mbbadaf.cloudfront.net/media/details/Dwaynejohnson9oct20jpg.jpg'
-										alt='stories' title='Story'>
-								</div>
 							</div>
+							<div class="carousel-item  ">
+								<div class="d-flex d-block w-100" style="gap:2%;">
+
+									<img class='carousel-img'
+										src='https://i.pinimg.com/originals/78/cf/d8/78cfd8f4d7e21c49ef5e9a90cd1508a3.jpg'
+										alt='stories' title='Story'>
+									<img class='carousel-img '
+										src='https://i.pinimg.com/originals/78/cf/d8/78cfd8f4d7e21c49ef5e9a90cd1508a3.jpg'
+										alt='stories' title='Story'>
+									<img class=carousel-img
+										src='https://i.pinimg.com/originals/78/cf/d8/78cfd8f4d7e21c49ef5e9a90cd1508a3.jpg'
+										alt='stories' title='Story'>
+									<img class=carousel-img
+										src='https://i.pinimg.com/originals/78/cf/d8/78cfd8f4d7e21c49ef5e9a90cd1508a3.jpg'
+										alt='stories' title='Story'>
+
+								</div>
+
+							</div>
+
 						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"
+							data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"
+							data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+						</button>
 					</div>
+
+
 
 
 					<div class='mt-3'>
@@ -179,7 +229,7 @@
 							</p>
 						</div>
 
-						<div id='flex-gallary' class=' d-flex flex-wrap'>
+						<div id='flex-gallary' class='d-flex flex-wrap '>
 
 							<div class='single-box d-flex'>
 
@@ -197,7 +247,7 @@
 								<img class=card-img-top
 									src='https://pbs.twimg.com/profile_images/3478244961/01ebfc40ecc194a2abc81e82ab877af4_400x400.jpeg'
 									alt='stories' title='Story'>
-								<div id='icon-toggle' class='icon-toggle d-none  text-muted'>
+								<div class='icon-toggle d-none  text-muted'>
 									<h3>Be_Happy_::)</h3>
 									<p>One smile is enough to change the world</p>
 								</div>
@@ -237,7 +287,7 @@
 								<img class=card-img-top
 									src='https://img.mensxp.com/media/content/2020/Apr/Why-The-Rock-Earns-Over-Rs-6-Cr-Per-Insta-Post1100_5e9d8dffe3334.jpeg'
 									alt='stories' title='Story'>
-								<div id='icon-toggle' class='icon-toggle d-none text-muted'>
+								<div class='icon-toggle d-none text-muted'>
 									<h3>Be_Happy_::)</h3>
 									<p>One smile is enough to change the world</p>
 								</div>
@@ -250,9 +300,11 @@
 				</div>
 
 
-				<div class='container-fluid	'>
+				<div class='container-fluid	sticky'>
 					<div class='Followers'>
-						<h2 class='text-muted h4'>New Followers</h2>
+						<div class="">
+							<h2 class='text-muted head-md padding font-800'>New Followers</h2>
+						</div>
 
 						<div class=' mt-2' style='background:#ffff; '>
 							<div class='d-flex align-items-center p-1'>
@@ -260,11 +312,14 @@
 									<img src='https://upload.wikimedia.org/wikipedia/commons/2/27/Smiling_Man_%28Imagicity_97%29.jpg'
 										alt='profile-img' title='prfile-pic' class='profile-img-followers' width=50>
 								</div>
+								<p class='h6 f-grow pl-2'>Vishal<br> Una HP</p>
 
-								<p class='h6 mx-auto'>Vishal<br> Una HP</p>
-								<button class='btn btn-primary align-right p-1'>Follow</button>
-								<i class="head-action-btn fa-solid fa-ellipsis-vertical ml-3 "
-									style="color: #98a0ae; font-size:22px; cursor:pointer;"></i>
+								<div class="" style="height: auto;">
+									<button class='btn btn-primary align-right theme-follow '
+										style="right: 2px;">Follow</button>
+									<i class="head-action-btn fa-solid fa-ellipsis-vertical ml-3 "
+										style="color: #98a0ae; font-size:22px; cursor:pointer;"></i>
+								</div>
 							</div>
 						</div>
 						<div class=' mt-2' style='background:#ffff; '>
@@ -274,10 +329,14 @@
 										alt='profile-img' title='prfile-pic' class='profile-img-followers' width=50>
 								</div>
 
-								<p class='h6 mx-auto'>Aniket<br> Kangra </p>
-								<button class='btn btn-primary align-right p-1'>Follow</button>
-								<i class="head-action-btn fa-solid fa-ellipsis-vertical ml-3 "
-									style="color: #98a0ae; font-size:22px; cursor:pointer;"></i>
+								<p class='h6 mx-auto f-grow  pl-2'>Aniket<br> Kangra </p>
+
+								<div class="" style="height: auto;">
+									<button class='btn btn-primary align-right theme-follow '
+										style="right: 2px;">Follow</button>
+									<i class="head-action-btn fa-solid fa-ellipsis-vertical ml-3 "
+										style="color: #98a0ae; font-size:22px; cursor:pointer;"></i>
+								</div>
 							</div>
 						</div>
 						<div class=' mt-2' style='background:#ffff; '>
@@ -287,10 +346,14 @@
 										title='prfile-pic' class='profile-img-followers' width=50>
 								</div>
 
-								<p class='h6 mx-auto'>Rohit<br> Sari</p>
-								<button class='btn btn-primary align-right p-1'>Follow</button>
-								<i class="head-action-btn fa-solid fa-ellipsis-vertical ml-3 "
-									style="color: #98a0ae; font-size:22px; cursor:pointer;"></i>
+								<p class='h6 mx-auto  pl-2 f-grow'>Rohit<br> Sari</p>
+
+								<div class="" style="height: auto;">
+									<button class='btn btn-primary align-right theme-follow '
+										style="right: 2px;">Follow</button>
+									<i class="head-action-btn fa-solid fa-ellipsis-vertical ml-3 "
+										style="color: #98a0ae; font-size:22px; cursor:pointer;"></i>
+								</div>
 							</div>
 						</div>
 						<div class=' mt-2' style='background:#ffff; '>
@@ -300,10 +363,14 @@
 										title='prfile-pic' class='profile-img-followers' width=50>
 								</div>
 
-								<p class='h6 mx-auto'>Asha<br> Una HP</p>
-								<button class='btn btn-primary align-right p-1'>Follow</button>
-								<i class="head-action-btn fa-solid fa-ellipsis-vertical ml-3 "
-									style="color: #98a0ae; font-size:22px; cursor:pointer;"></i>
+								<p class='h6 mx-auto  pl-2 f-grow'>Asha<br> Una HP</p>
+
+								<div class="" style="height: auto;">
+									<button class='btn btn-primary align-right theme-follow '
+										style="right: 2px;">Follow</button>
+									<i class="head-action-btn fa-solid fa-ellipsis-vertical ml-3 "
+										style="color: #98a0ae; font-size:22px; cursor:pointer;"></i>
+								</div>
 							</div>
 						</div>
 
@@ -318,16 +385,16 @@
 								<p class='h1 text-muted'><strong>557733</strong></p>
 								<p class='text-muted'>New Likes Today</p>
 
-								<div class="d-flex container justify-content-center">
-									<div class="flex-item border-top border-right">
+								<div class="d-flex container justify-content-center" style="padding: 0;">
+									<div class="flex-item border-top border-right" style=" border-color: #f2f2f2;">
 										<p class="text-muted"><strong>3322</strong><br>Comments
 										</p>
 									</div>
-									<div class="flex-item border-top border-right">
+									<div class="flex-item border-top border-right" style=" border-color: #f2f2f2;">
 										<p class="text-muted"><strong>1367</strong><br>Shared
 										</p>
 									</div>
-									<div class="flex-item border-top">
+									<div class="flex-item border-top" style=" border-color: #f2f2f2;">
 										<p class="text-muted"><strong>359</strong><br>Saved</p>
 									</div>
 								</div>
@@ -344,16 +411,27 @@
 		</div>
 
 	</div>
-</body>
-<script>
-	const listGallary = document.getElementById('flex-gallary')
-	const div = document.getElementsByClassName('icon-toggle')
-	function gallary() {
-		listGallary.style.flexDirection = 'column';
-		for (let i = 0; i < div.length; i++) {
-			div[i].classList.add('hidden');
+
+
+
+
+
+	<script>
+		const listGallary = document.getElementById('flex-gallary')
+		const div = document.getElementsByClassName('icon-toggle')
+
+		function gallary() {
+
+			listGallary.classList.toggle('column');
+			for (let i = 0; i < div.length; i++) {
+				div[i].classList.toggle('hidden');
+
+			}
+
+
 		}
-	}
-</script>
+
+	</script>
+</body>
 
 </html>
