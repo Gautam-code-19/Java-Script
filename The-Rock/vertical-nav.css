@@ -25,7 +25,7 @@
 }
 
 .navbar-nav {
-  width: 100%;
+  width: 87%;
   margin-left: 35px;
 }
 
@@ -171,9 +171,13 @@ second section started...
   }
 }
 
+.story {
+  gap: 25px;
+}
+
 .carousel-img {
   width: 23%;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .card-img-top {
@@ -183,8 +187,8 @@ second section started...
 }
 
 .border-box {
-  width: 59px;
-  height: 59px;
+  width: 49px;
+  height: 49px;
   border-radius: 100px;
   background: linear-gradient(225deg,
       rgba(235, 71, 38, 0.9780287114845938) 39%,
@@ -192,15 +196,15 @@ second section started...
 }
 
 .profile-img-followers {
-  min-width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   object-fit: cover;
   border-radius: 100px;
   border: 2px solid #ffff;
 }
 
 .report-box {
-  height: 18rem;
+  height: 21rem;
   background: #ffff;
 }
 
@@ -220,7 +224,6 @@ second section started...
 .hidden {
   display: block !important;
   padding-left: 20px;
-
   width: 200%;
 }
 
@@ -283,10 +286,26 @@ second section started...
 .sticky {
   position: sticky;
   top: 0px;
-  z-index: 999;
+  /* z-index: 999; */
 }
 
 #flex-gallary {
   /* gap: 4%;  */
   justify-content: space-between;
+}
+
+.xs-img {
+  width: 30px;
+  border-radius: 50px;
+  border: none;
+  height: 30px;
+  margin-left: -7px;
+}
+
+.xs-img-box {
+  padding: 20px 0;
+}
+
+.text-xs {
+  font-size: 12px;
 }
