@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    <link rel="stylesheet" href="slider.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <script src="https://kit.fontawesome.com/1053bbc963.js" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+
+    <div class="container d-flex justify-content-center align-items-center mt-3">
+        <div class="button d-flex justify-content-between align-items-center"
+            style="position: absolute; width: 1140px;">
+            <button class="button-slide" id="left"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="button-slide" id="right"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+        <div class=" row slider" id="card-container">
+            <div class="col-md-12">
+                <div class="card-box">
+                    <img src="https://th.bing.com/th/id/R.bfe7521dd2a30911c0137a3be8bed0d1?rik=dJj%2blHDQWF5QhQ&pid=ImgRaw&r=0  "
+                        alt="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card-box">
+                    <img src="https://th.bing.com/th/id/R.24223c92569a035c382c2b658e9789a0?rik=SsJgrmXtdiNaEw&pid=ImgRaw&r=0"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card-box">
+                    <img src="https://i1.wp.com/billionaire365.com/wp-content/uploads/2019/02/Ecommerce-Website.jpg?fit=2048%2C1452&ssl=1"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card-box">
+                    <img src="https://i1.wp.com/billionaire365.com/wp-content/uploads/2019/02/Ecommerce-Website.jpg?fit=2048%2C1452&ssl=1"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card-box">
+                    <img src="https://i1.wp.com/billionaire365.com/wp-content/uploads/2019/02/Ecommerce-Website.jpg?fit=2048%2C1452&ssl=1"
+                        alt="">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="card-box">
+                    <img src="https://i1.wp.com/billionaire365.com/wp-content/uploads/2019/02/Ecommerce-Website.jpg?fit=2048%2C1452&ssl=1"
+                        alt="">
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- *****************dropbox******************** -->
+    <div class="d-flex mt-4 justify-content-center">
+        <form class="form-container d-flex justify-content-center" style="flex-direction: column; "   id="myForm" enctype='multipart/form-data'>
+            <div class="drag-file-area" id="drag-Area">
+                <label class="label" for="inputFile">
+                    <i class="fa-solid fa-cloud-arrow-up" style="color: #42a6f1; font-size: 50px; padding: 12px;"></i>
+                    <span class="h3 d-block text-muted"> Drag/Drop </span>
+                    <span>or</span>
+                    <span class="browse-files-text">browse file from device</span>
+                    <input type="file" class="default-file-input d-none" id="inputFile" accept="image/*" multiple />
+                </label>
+            </div>
+            <button type="submit" class="upload-button">Add..</button>
+        </form>
+    </div>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<script src="slider.js"></script>
+<script>
+    $('.slider').slick({
+        nextArrow: $('#right'),
+        prevArrow: $('#left'),
+        dots: true,
+        infinite: false,
+        speed: 300,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+            // You can unslick at a given breakpoint now by adding:
+            // settings: "unslick"
+            // instead of a settings object
+        ]
+    });
+
+</script>
+
+</html>
