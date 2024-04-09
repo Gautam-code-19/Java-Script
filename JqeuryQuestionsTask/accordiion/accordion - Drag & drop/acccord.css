@@ -65,7 +65,7 @@ h2 {
     margin-bottom: 35px;
     font-size: 55px;
     text-align: center;
-    text-shadow: 3px 3px 60px;
+    text-shadow: 10px 10px 60px #f8f6f6;
     color: #880303;
     font-family: "Creepster", system-ui;
 }
@@ -98,3 +98,75 @@ h2 {
     background: none !important;
     border: none !important;
 }
+
+.card-container {
+    background-color: #be6767;
+    padding: 30px;
+    position: relative;
+    /* border-radius: 300px     30px 0 0; */
+    /* border-top-left-radius: 300px; */
+}
+
+.card-container:before {
+    content: '';
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    border-radius: 0 70% 0;
+    background-color: #FFF;
+    /* display: inline-block; */
+    left: 1px;
+    top: 0;
+    margin-right: 10px;
+}
+
+.card-container:after {
+    content: '';
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    border-radius: 70% 0;
+    background-color: #FFF;
+    /* display: inline-block; */
+    right: -10px;
+    top: 0;
+    margin-right: 10px;
+}
+
+.cards {
+    background: #FFF;
+    height: 280px;
+    border-radius: 3px;
+    width: 200px;
+    cursor: move;
+}
+
+.add-Image {
+    background: #FFF;
+    height: 280px;
+    width: 200px;
+    align-self: center;
+    border-radius: 3px;
+    justify-self: center;
+
+    &:hover {
+        background: #f8f6f6;
+    }
+}
+
+#myform {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}   
