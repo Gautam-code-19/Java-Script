@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Menu</title>
+    <link rel="stylesheet" href="nestedMenu.css">
+
+
+    <script src="https://kit.fontawesome.com/1053bbc963.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="NestedMenu.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar" id="navbar">
+
+            <div class="box" id="form-container">
+                <form action="#" class="form-wrapper" name="addMenuForm">
+                    <div class="d-flex" style="flex-direction: row-reverse;">
+
+                        <button class="btn" type="button" title="Close" onclick="Close()"><i
+                                class="fa-solid fa-xmark"></i></button>
+                    </div>
+                    <div class="d-flex">
+                        <label for=" AddMenu" class="form-label text-md">Menu:</label>
+                        <input type="text" class="form-input" name="menuName" id="AddMenu">
+                    </div>
+                    <div class="d-flex">
+                        <label for="addto" class="form-label text-md">Location</label>
+
+                        <select name="insertTo" id="addto" class="form-input">
+
+
+                        </select>
+                    </div>
+                    <button class="btn" type="submit">Add</button>
+                </form>
+            </div>
+            <ul class="list-wrapper" id="parent-link">
+
+
+            </ul>
+
+            <ul class="list-wrapper">
+                <li><button type="button" class="btn" title="ADD NEW MENU" onclick="AddMenu()"><i
+                            class="fa-solid fa-caret-down"></i> ADD</button></li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>

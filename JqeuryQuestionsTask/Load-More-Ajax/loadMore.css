@@ -1,0 +1,22 @@
+.card-img {
+    width: 1200px;
+    border-radius: 6px;
+    height: 800px;
+    object-fit: cover;
+    /* flex-basis: 50%;
+    flex-grow: 1; */
+    transition: All .5s;
+    overflow: hidden;
+
+    &:hover {
+        scale: 1.02;
+    }
+}
+
+.my-div {
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap: 20px;
+    width: 100%;
+}
