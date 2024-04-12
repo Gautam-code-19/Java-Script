@@ -152,7 +152,8 @@ select[class='form-input'] {
     background: #8acf50f8;
     border: none !important;
     border-radius: 12px;
-
+    padding: 9px 0;
+    font-size: 25px;
 }
 
 .forth {
