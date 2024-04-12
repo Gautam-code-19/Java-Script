@@ -56,7 +56,7 @@ $(document).ready(function () {
     parentLink.append(menuItem);
   }
 
-  // Show child elem on click parent link
+  // Show child element on click parent link
   $("#parent-link").on("click", ".btn", function () {
     $(".nestedNav").removeClass("scale-up");
     $(this).next(".nestedNav").toggleClass("scale-up");
