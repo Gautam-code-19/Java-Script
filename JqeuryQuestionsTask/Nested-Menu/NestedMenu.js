@@ -82,7 +82,6 @@ $(document).ready(function () {
         generateMenu(); // Regenerate the entire menu
       }
     }
-    alert("link add successFull");
     localStorage.setItem("NavData", JSON.stringify(navData));
   });
 
