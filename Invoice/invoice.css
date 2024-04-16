@@ -46,7 +46,7 @@ p {
 .client-in {
     display: flex;
     flex-wrap: wrap;
-    width: 480px;
+    width: 450px;
 
 }
 
@@ -63,7 +63,7 @@ p {
 .tableOne {
     width: 100%;
     border: none;
-    border-top: 4px solid #2e2ad0;
+    border-top: 3px solid #2e2ad0;
 }
 
 .tableTwo {
@@ -89,7 +89,7 @@ th {
     color: #4c51cc;
 }
 
-td {
+.td {
     padding: 10px 0;
     font-size: 16px;
     color: #292b2e;

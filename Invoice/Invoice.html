@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="stylesheet" href="invoice.css">
+    <link rel="stylesheet" href="invoiceForm.css">
 
 
     <script src="https://kit.fontawesome.com/1053bbc963.js" crossorigin="anonymous"></script>
@@ -23,7 +24,58 @@
 
 <body>
 
-    <section class="container pt-5 pb-5">
+    <div class="container d-flex flex-wrap">
+        <form action="" class="d-flex flex-wrap ">
+            <label for="comName">Your Company Name<br>
+                <input type="text" name="Name" id="comName" placeholder="Enter your Company Name"></label>
+
+            <label for="address">Enter Company Address
+                <input type="text" name="address" id="address" placeholder="address"></label>
+
+            <label for="City">City
+                <input type="text" name="city" id="City" placeholder="Your city"></label>
+
+            <label for="mypin">PinCode
+                <input type="number" name="mypin" id="mypin" placeholder="PinCode"></label>
+
+            <label for="country">Country
+                <input type="text" name="country" id="country" placeholder="Your Country">
+            </label>
+
+            <label for="phone">Phone
+                <input type="number" name="number" id="number" placeholder="Enter Phone Number">
+            </label>
+
+
+            <label for="clientName">Client name
+                <input type="text" name="clientName" id="clientName" placeholder="Client Name">
+            </label>
+
+            <label for="clientAdd">Client Address <input type="text" name="clientAdd" id="clientAdd"
+                    placeholder="Enter Client Address">
+            </label>
+
+            <label for="clientCity">Client City
+                <input type="text" name="clientCity" placeholder="Enter Client City" id="clientCity">
+            </label>
+
+            <label for="clientPin">Client Pin Code
+                <input type="number" name="clientPin" id="clientPin" placeholder="Enter Client PinCode">
+            </label>
+            <br>
+            <input type="submit" value="Submit">
+            <!-- <button onclick="window.print()">Print</button> -->
+        </form>
+    </div>
+
+
+
+
+
+
+
+
+    <section class="container pt-5 pb-5 ">
 
         <div class="container">
 
@@ -44,8 +96,8 @@
             </div>
 
             <!-- bill to senction -->
-            <div class="d-flex justify-content-between">
-                <div class="address ">
+            <div class="d-flex justify-content-between flex-wrap">
+                <div class="address m-0 " style="flex:1;">
                     <p class="title">Billed To</p>
                     <p class="text-sm">Your Client</p>
                     <p class="text-sm">1234, Your street City, Una</p>
@@ -94,23 +146,25 @@
                 </thead>
                 <tbody>
                     <tr class="tr">
-                        <td>Services <br><span style="font-size: 13px;">Cost of Carious Services</span></td>
-                        <td>&#x20b9;550 <br><span>+Tax</span></td>
-                        <td>10</td>
-                        <td>&#x20b9;5500</td>
+                        <td class="td">Services <br><span style="font-size: 13px;">Cost of Carious Services</span></td>
+                        <td class="td">&#x20b9;550 <br><span>+Tax</span></td>
+                        <td class="td">10</td>
+                        <td class="td">&#x20b9;5500</td>
                     </tr>
                     <tr class="tr">
-                        <td>Consulting<br><span style="font-size: 13px;">Consulting for your bussiness.</span></td>
-                        <td>&#x20b9;100 <br><span>+Tax</span></td>
-                        <td>10</td>
-                        <td>&#x20b9;1000</td>
+                        <td class="td">Consulting<br><span style="font-size: 13px;">Consulting for your
+                                bussiness.</span></td>
+                        <td class="td">&#x20b9;100 <br><span>+Tax</span></td>
+                        <td class="td">10</td>
+                        <td class="td">&#x20b9;1000</td>
                     </tr>
                     <tr class="tr">
-                        <td>Materials<br><span style="font-size: 13px;">Cost of materials and supplies to complete your
+                        <td class="td">Materials<br><span style="font-size: 13px;">Cost of materials and supplies to
+                                complete your
                                 job.</span></td>
-                        <td>&#x20b9;12339 <br><span>+Tax</span></td>
-                        <td>1</td>
-                        <td>&#x20b9;12339</td>
+                        <td class="td">&#x20b9;12339 <br><span>+Tax</span></td>
+                        <td class="td">1</td>
+                        <td class="td">&#x20b9;12339</td>
                     </tr>
                 </tbody>
             </table>
@@ -119,7 +173,7 @@
 
         <!-- total billing section-->
 
-        <div class="d-flex justify-content-end mt-5">
+        <div class="d-flex justify-content-end mt-3">
             <div class="small-box">
                 <table class="tableTwo">
                     <thead>
