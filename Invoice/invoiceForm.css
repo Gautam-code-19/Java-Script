@@ -1,13 +1,20 @@
 form {
     margin-top: 20px;
     min-width: 320px;
-    gap: 6px;
+    gap: 5px;
     justify-content: center;
 }
 
 label {
     display: block;
-    flex-basis: calc(50% - 10px);
+    flex: 1;
+    flex-basis: calc(50% - 15px);
+}
+
+.label {
+    display: block;
+    flex: 1;
+    flex-basis: calc(25% - 10px);
 }
 
 input[type="text"],
@@ -39,4 +46,32 @@ input[type="submit"]:hover {
     color: red;
     font-size: 12px;
     margin-top: 5px;
+}
+
+.Company-details {
+    padding: 20px 15px;
+    background: #ffffff;
+    border-radius: 4px;
+
+
+}
+
+.Client-details {
+    padding: 20px 15px;
+    background: #ffffff;
+    border-radius: 4px;
+}
+
+.margin-l-r {
+    padding: 40px 0;
+    margin: 10px 12px;
+
+}
+
+.button {
+    border: none;
+    background: #ffffff;
+    padding: 15px 20px;
+    font-size: 17px;
+    
 }

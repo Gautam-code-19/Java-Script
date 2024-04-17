@@ -20,51 +20,122 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+    <script src="Invoice-form.js"></script>
+
 </head>
 
 <body>
 
-    <div class="container d-flex flex-wrap">
+    <div class="container d-flex flex-wrap ">
         <form action="" class="d-flex flex-wrap ">
-            <label for="comName">Your Company Name<br>
-                <input type="text" name="Name" id="comName" placeholder="Enter your Company Name"></label>
+            <div class="container d-flex mt-5 gap-2">
 
-            <label for="address">Enter Company Address
-                <input type="text" name="address" id="address" placeholder="address"></label>
+                <!-- company details -->
 
-            <label for="City">City
-                <input type="text" name="city" id="City" placeholder="Your city"></label>
+                <div class=" Company-details">
+                    <div class="container">
+                        <h2 class=" h5">Company Details:</h2>
+                    </div>
+                    <div class="container-fluid d-flex flex-wrap gap-1">
+                        <label for="comName">Your Company Name<br>
+                            <input type="text" name="Name" id="comName" placeholder="Your Company Name"></label>
 
-            <label for="mypin">PinCode
-                <input type="number" name="mypin" id="mypin" placeholder="PinCode"></label>
+                        <label for="address">Company Address
+                            <input type="text" name="address" id="address" placeholder="Address"></label>
 
-            <label for="country">Country
-                <input type="text" name="country" id="country" placeholder="Your Country">
-            </label>
+                        <label class="label" for="City">City
+                            <input type="text" name="city" id="City" placeholder="Your city"></label>
 
-            <label for="phone">Phone
-                <input type="number" name="number" id="number" placeholder="Enter Phone Number">
-            </label>
+                        <label class="label" for=" mypin">PinCode
+                            <input type="number" name="mypin" id="mypin" placeholder="PinCode"></label>
+
+                        <label class="label" for="country">Country
+                            <input type="text" name="country" id="country" placeholder="Your Country">
+                        </label>
+
+                        <label class="label" for="phone">Phone
+                            <input type="number" name="number" id="number" placeholder="Enter Phone Number">
+                        </label>
+                    </div>
+                </div>
+
+                <!-- client details -->
+
+                <div class=" Client-details">
+                    <div class="container">
+                        <h2 class=" h5">Client Details:</h2>
+                    </div>
+                    <div class="container-fluid d-flex flex-wrap gap-1 ">
+                        <label for="clientName">Client name
+                            <input type="text" name="clientName" id="clientName" placeholder="Client Name">
+                        </label>
+
+                        <label for="clientAdd">Client Address <input type="text" name="clientAdd" id="clientAdd"
+                                placeholder="Enter Client Address">
+                        </label>
+
+                        <label class="label" for=" clientCity">Client City
+                            <input type="text" name="clientCity" placeholder="Enter Client City" id="clientCity">
+                        </label>
+
+                        <label class="label" for="clientPin">Client Pin Code
+                            <input type="number" name="clientPin" id="clientPin" placeholder="Enter Client PinCode">
+                        </label>
+
+                        <label class="label" for="client-country">Client Country
+                            <input type="text" name="client-country" id="client-country"
+                                placeholder="Enter Client Country">
+                        </label>
+                        <label for="client-phone" class="label"> Client Phone No.
+                            <input type="number" name="client-phone" id="client-phone"
+                                placeholder="Client Contact Number">
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- invoice details -->
+
+            <div class="container-fluid d-flex flex-wrap Client-details margin-l-r">
+                <h2 class="container h5">Invoice Items:</h2>
+
+                <div class="container d-flex flex-wrap gap-1">
+                    <table class="tableOne">
+                        <thead class="thead">
+                            <tr class="tr" style="padding: 20px 0;">
+                                <th>Item</th>
+                                <th class="cell3">Description</th>
+                                <th class="cell3">Rate</th>
+                                <th class="cell3">QTY</th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="tbody">
+                            <tr>
+                                <td><input type="text" name="Item" placeholder="Item Name"></td>
+                                <td><input type="text" name="description" placeholder="Description"></td>
+                                <td><input type="number" name="Rate" placeholder="Price per unit"></td>
+                                <td><input type="number" name="Units" value="1" placeholder="No. of units"></td>
+                            </tr>
+                        </tbody>
+                        <tfoot">
+                            <tr>
+                                <td colspan="4" class=" text-right">
+                                    <button class="button text-primary" type="button" id="addItem">Add More</button>
+                                </td>
+                            </tr>
+                            </tfoot>
+                    </table>
+                </div>
+            </div>
 
 
-            <label for="clientName">Client name
-                <input type="text" name="clientName" id="clientName" placeholder="Client Name">
-            </label>
-
-            <label for="clientAdd">Client Address <input type="text" name="clientAdd" id="clientAdd"
-                    placeholder="Enter Client Address">
-            </label>
-
-            <label for="clientCity">Client City
-                <input type="text" name="clientCity" placeholder="Enter Client City" id="clientCity">
-            </label>
-
-            <label for="clientPin">Client Pin Code
-                <input type="number" name="clientPin" id="clientPin" placeholder="Enter Client PinCode">
-            </label>
-            <br>
             <input type="submit" value="Submit">
-            <!-- <button onclick="window.print()">Print</button> -->
+            <button onclick="window.print()">Print</button>
         </form>
     </div>
 
@@ -75,19 +146,20 @@
 
 
 
-    <section class="container pt-5 pb-5 ">
+    <section class="container pt-5 pb-5 " id="print">
 
         <div class="container">
 
             <h1 class="mb-3 font-700">Invoice</h1>
 
-            <div class="d-flex justify-content-between mb-5">
+            <div class="d-flex justify-content-between mb-5" id="head-box-right">
                 <div>
                     <h2 class="h1 "><i class="fa-solid fa-pen-to-square"></i>Click to edit</h2>
                 </div>
                 <div class="address text-right">
                     <p class="head-sm">Your Company</p>
-                    <p class="text-sm">1234, Your street City, Una</p>
+                    <p class="text-sm">1234, Your street </p>
+                    <p class="text-sm">City, Una</p>
                     <p class="text-sm">14342</p>
                     <p class="text-sm">Bharat</p>
                     <p class="text-sm">+91-23453-34213</p>

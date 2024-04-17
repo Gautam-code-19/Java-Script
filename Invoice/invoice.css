@@ -3,8 +3,37 @@
     font-family: "Noto Sans", sans-serif;
 }
 
+body {
+    background: #dadadb;
+}
+
+
+@media print {
+    body {
+        visibility: hidden;
+    }
+
+    #print {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 4%;
+    }
+
+    h2 {
+        display: none;
+    }
+
+    #head-box-right {
+        margin-top: -30px;
+        margin-bottom: 30px !important;
+    }
+}
+
+
+
 .address {
-    width: 170px;
+    width: 190px;
     margin-top: -20px;
     word-wrap: break-word;
 }
@@ -106,7 +135,7 @@ tbody .tr {
 
 .small-box {
     width: 340px;
-    min-height: 300px;
+    min-height: 200px;
 }
 
 .cell {
@@ -121,3 +150,4 @@ tbody .tr {
 .cell3 {
     min-width: 50px;
 }
+
