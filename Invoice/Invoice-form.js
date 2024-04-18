@@ -66,18 +66,18 @@ function loadInvoice() {
 
   $("#YourComName").text(data.comName);
   $("#comAdd").text(data.address);
-  $("#city").text(data.city);
+  $("#city").text("city," + data.city);
   $("#Mypin").text(data.mypin);
   $("#Country").text(data.country);
-  $("#Phone").text(data.phone);
+  $("#Phone").text("+91 " + data.phone);
 
   // Client details
   $("#clientNAme").text(data.clientName);
   $("#ClientAdd").text(data.clientAdd);
-  $("#ClientCity").text(data.clientCity);
+  $("#ClientCity").text("city," + data.clientCity);
   $("#ClientPin").text(data.clientPin);
   $("#ClientCountry").text(data.clientCountry);
-  $("#ClientPhone").text(data.clientPhone);
+  $("#ClientPhone").text("+91 " + data.clientPhone);
 
   // Invoice details
   $("#IssuedDate").text(data.issueDate);
