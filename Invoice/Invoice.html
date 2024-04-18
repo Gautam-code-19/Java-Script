@@ -59,7 +59,7 @@
                         </label>
 
                         <label class="label" for="phone">Phone
-                            <input type="number" name="phone" id="phone" placeholder="Enter Phone Number" max="10">
+                            <input type="number" name="myPhone" id="phone" placeholder="Enter Phone Number" max="10">
                         </label>
                     </div>
                 </div>
@@ -156,7 +156,7 @@
                 </div>
                 <div class="container margin-l-r d-flex Client-details justify-content-center">
                     <div>
-                        <button type="submit"><i class="fa-solid fa-folder-plus"></i>&nbsp;
+                        <button type="submit" onclick="saveFormData()"><i class="fa-solid fa-folder-plus"></i>&nbsp;
                             Invoice</button>
 
                     </div>
@@ -184,12 +184,12 @@
                     <h2 class="h1 "><i class="fa-solid fa-pen-to-square"></i>Click to edit</h2>
                 </div>
                 <div class="address text-right">
-                    <p class="head-sm">Your Company</p>
-                    <p class="text-sm">1234, Your street </p>
-                    <p class="text-sm">City, Una</p>
-                    <p class="text-sm">14342</p>
-                    <p class="text-sm">Bharat</p>
-                    <p class="text-sm">+91-23453-34213</p>
+                    <p class="head-sm" id="YourComName">Your Company</p>
+                    <p class="text-sm" id="comAdd">1234, Your street </p>
+                    <p class="text-sm" id="city">City, Una</p>
+                    <p class="text-sm" id="Mypin">14342</p>
+                    <p class="text-sm" id="Country">Bharat</p>
+                    <p class="text-sm" id="Phone">+91-23453-34213</p>
 
                 </div>
             </div>
@@ -198,23 +198,23 @@
             <div class="d-flex justify-content-between ">
                 <div class="address m-0 flex-1">
                     <p class="title">Billed To</p>
-                    <p class="text-sm">Your Client</p>
-                    <p class="text-sm">1234, Your street </p>
-                    <p class="text-sm">City, Una </p>
-                    <p class="text-sm">14342</p>
-                    <p class="text-sm">Bharat</p>
-                    <p class="text-sm">+91-23453-34213</p>
+                    <p class="text-sm" id="clientNAme">Your Client</p>
+                    <p class="text-sm" id="ClientAdd">1234, Your street </p>
+                    <p class="text-sm" id="ClientCity">City, Una </p>
+                    <p class="text-sm" id="ClientPin">14342</p>
+                    <p class="text-sm" id="ClientCountry">Bharat</p>
+                    <p class="text-sm" id="ClientPhone">+91-23453-34213</p>
 
                 </div>
                 <div class="client-in">
                     <div class="details">
                         <p class="title">Date Issued</p>
-                        <p class="text-sm">14/03/2022</p>
+                        <p class="text-sm" id="IssuedDate">14/03/2022</p>
 
                     </div>
                     <div class="details">
                         <p class="title">Invoice Number</p>
-                        <p class="text-sm">INR-2022</p>
+                        <p class="text-sm" id="InvoiceNumber">INR-2022</p>
 
                     </div>
                     <div class="details text-right">
@@ -224,7 +224,7 @@
                     </div>
                     <div class="details">
                         <p class="title">Due Date</p>
-                        <p class="text-sm">14/09/2022</p>
+                        <p class="text-sm" id="DueDate">14/09/2022</p>
 
                     </div>
                 </div>

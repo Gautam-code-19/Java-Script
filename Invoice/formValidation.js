@@ -18,7 +18,7 @@ $(document).ready(function () {
       country: {
         required: true,
       },
-      phone: {
+      myPhone: {
         required: true,
         minlength: 10,
         maxlength: 10,
@@ -47,7 +47,6 @@ $(document).ready(function () {
       clientPhone: {
         required: true,
         maxlength: 10,
-        minlength: 10,
       },
       // invoice Details..
       issueDate: {
@@ -91,6 +90,9 @@ $(document).ready(function () {
       mypin: {
         required: "Pin-Code missed.*",
       },
+      // phone: {
+      //   required: "required.*",
+      // },
       country: {
         required: "Required.*",
       },
