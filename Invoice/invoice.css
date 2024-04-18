@@ -16,8 +16,14 @@ body {
     #print {
         visibility: visible;
         position: absolute;
-        top: 0;
-        left: 4%;
+        top: -1px;
+        left: 13%;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #printbtn {
+        display: none;
     }
 
     h2 {
@@ -75,7 +81,7 @@ p {
 .client-in {
     display: flex;
     flex-wrap: wrap;
-    width: 450px;
+    min-width: 270px;
 
 }
 
@@ -150,4 +156,3 @@ tbody .tr {
 .cell3 {
     min-width: 50px;
 }
-

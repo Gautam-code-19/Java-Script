@@ -22,7 +22,9 @@
 
     <script src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
 
+    <script src="formValidation.js"></script>
     <script src="Invoice-form.js"></script>
 
 </head>
@@ -30,7 +32,7 @@
 <body>
 
     <div class="container d-flex flex-wrap ">
-        <form action="" class="d-flex flex-wrap ">
+        <form action="" id="invoice-form" class="d-flex flex-wrap ">
             <div class="container d-flex mt-5 gap-2">
 
                 <!-- company details -->
@@ -41,7 +43,7 @@
                     </div>
                     <div class="container-fluid d-flex flex-wrap gap-1">
                         <label for="comName">Your Company Name<br>
-                            <input type="text" name="Name" id="comName" placeholder="Your Company Name"></label>
+                            <input type="text" name="comName" id="comName" placeholder="Your Company Name"></label>
 
                         <label for="address">Company Address
                             <input type="text" name="address" id="address" placeholder="Address"></label>
@@ -49,7 +51,7 @@
                         <label class="label" for="City">City
                             <input type="text" name="city" id="City" placeholder="Your city"></label>
 
-                        <label class="label" for=" mypin">PinCode
+                        <label class="label" for="mypin">Pin Code
                             <input type="number" name="mypin" id="mypin" placeholder="PinCode"></label>
 
                         <label class="label" for="country">Country
@@ -57,7 +59,7 @@
                         </label>
 
                         <label class="label" for="phone">Phone
-                            <input type="number" name="number" id="number" placeholder="Enter Phone Number">
+                            <input type="number" name="phone" id="phone" placeholder="Enter Phone Number" max="10">
                         </label>
                     </div>
                 </div>
@@ -77,7 +79,7 @@
                                 placeholder="Enter Client Address">
                         </label>
 
-                        <label class="label" for=" clientCity">Client City
+                        <label class="label" for="clientCity">Client City
                             <input type="text" name="clientCity" placeholder="Enter Client City" id="clientCity">
                         </label>
 
@@ -86,11 +88,11 @@
                         </label>
 
                         <label class="label" for="client-country">Client Country
-                            <input type="text" name="client-country" id="client-country"
+                            <input type="text" name="clientCountry" id="client-country"
                                 placeholder="Enter Client Country">
                         </label>
                         <label for="client-phone" class="label"> Client Phone No.
-                            <input type="number" name="client-phone" id="client-phone"
+                            <input type="number" name="clientPhone" id="client-phone"
                                 placeholder="Client Contact Number">
                         </label>
                     </div>
@@ -103,6 +105,21 @@
             <div class="container-fluid d-flex flex-wrap Client-details margin-l-r">
                 <h2 class="container h5">Invoice Items:</h2>
 
+                <div class="container d-flex gap-1">
+                    <label for="issue-date">Issue Date
+                        <input type="date" name="issueDate" id="issue-date">
+                    </label>
+                    <label for="invoiceNumber">Invoice Number
+                        <input type="text" name="invoiceNumber" id="invoiceNumber" placeholder="Invoice Number">
+                    </label>
+                    <label for="referanceNumber">Referance Number
+                        <input type="text" name="referanceNumber" id="referanceNumber"
+                            placeholder="Enter referance number">
+                    </label>
+                    <label for="dueDate">Due Date
+                        <input type="date" name="dueDate" id="dueDate">
+                    </label>
+                </div>
                 <div class="container d-flex flex-wrap gap-1">
                     <table class="tableOne">
                         <thead class="thead">
@@ -110,32 +127,42 @@
                                 <th>Item</th>
                                 <th class="cell3">Description</th>
                                 <th class="cell3">Rate</th>
-                                <th class="cell3">QTY</th>
-
+                                <th class="cell3">Quantity</th>
                             </tr>
                         </thead>
                         <tbody id="tbody">
-                            <tr>
+                            <tr id="1">
                                 <td><input type="text" name="Item" placeholder="Item Name"></td>
                                 <td><input type="text" name="description" placeholder="Description"></td>
                                 <td><input type="number" name="Rate" placeholder="Price per unit"></td>
-                                <td><input type="number" name="Units" value="1" placeholder="No. of units"></td>
+                                <td class="d-flex"><input type="number" name="Units" value="1"
+                                        placeholder="No. of units">
+                                    <button type="button" onclick="alert(' Sorry you not allowed to delete this one.')"
+                                        title="Delete" class="delete-left ">
+                                        <i class="fa-solid fa-delete-left delete-left-icon"></i>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                         <tfoot">
                             <tr>
                                 <td colspan="4" class=" text-right">
-                                    <button class="button text-primary" type="button" id="addItem">Add More</button>
+                                    <button class="button text-primary" type="button" id="addItem"><i
+                                            class="fa-solid fa-folder-plus"></i> Add More</button>
                                 </td>
                             </tr>
                             </tfoot>
                     </table>
                 </div>
+                <div class="container margin-l-r d-flex Client-details justify-content-center">
+                    <div>
+                        <button type="submit"><i class="fa-solid fa-folder-plus"></i>&nbsp;
+                            Invoice</button>
+
+                    </div>
+                </div>
             </div>
 
-
-            <input type="submit" value="Submit">
-            <button onclick="window.print()">Print</button>
         </form>
     </div>
 
@@ -168,11 +195,12 @@
             </div>
 
             <!-- bill to senction -->
-            <div class="d-flex justify-content-between flex-wrap">
-                <div class="address m-0 " style="flex:1;">
+            <div class="d-flex justify-content-between ">
+                <div class="address m-0 flex-1">
                     <p class="title">Billed To</p>
                     <p class="text-sm">Your Client</p>
-                    <p class="text-sm">1234, Your street City, Una</p>
+                    <p class="text-sm">1234, Your street </p>
+                    <p class="text-sm">City, Una </p>
                     <p class="text-sm">14342</p>
                     <p class="text-sm">Bharat</p>
                     <p class="text-sm">+91-23453-34213</p>
@@ -289,11 +317,13 @@
             </div>
             <div>
                 <p class="title">Terms</p>
-                <p>Plese pay within 30 days using the link in your invoice email.</p>
+                <p>Please pay within 30 days using the link in your invoice email.</p>
             </div>
         </div>
+        <button class="btn btn-primary mt-5" id="printbtn" onclick="window.print()"><i class="fa-solid fa-print"></i>
+            Print</button>
     </section>
 
 </body>
 
-</html>
+</html

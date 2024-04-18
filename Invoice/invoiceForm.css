@@ -1,35 +1,43 @@
 form {
     margin-top: 20px;
     min-width: 320px;
-    gap: 5px;
+    gap: 7px;
     justify-content: center;
 }
 
 label {
     display: block;
     flex: 1;
+    position: relative;
     flex-basis: calc(50% - 15px);
 }
 
 .label {
-    display: block;
+    /* display: block; */
     flex: 1;
     flex-basis: calc(25% - 10px);
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type='date'] {
     width: 100%;
-    padding: 8px;
+    padding: 4px;
     border: 1px solid #ccc;
+    /* color: #ccc; */
+    margin: 12px 0;
+    outline: none;
     border-radius: 4px;
+    -moz-appearance: textfield;
+    appearance: textfield;
     box-sizing: border-box;
 }
 
-input[type="submit"] {
+button[type="submit"] {
     background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 40px;
+    font-size: 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -37,15 +45,18 @@ input[type="submit"] {
     flex-basis: calc(70% - 10px);
 }
 
-input[type="submit"]:hover {
+Button[type="submit"]:hover {
     background-color: #45a049;
 }
+
 
 /* Optional: Style for error messages */
 .error {
     color: red;
-    font-size: 12px;
-    margin-top: 5px;
+    margin-top: -5px;
+    /* position: relative; */
+    top: -5px;
+    cursor: text;
 }
 
 .Company-details {
@@ -73,5 +84,20 @@ input[type="submit"]:hover {
     background: #ffffff;
     padding: 15px 20px;
     font-size: 17px;
-    
+
+}
+
+.delete-left {
+    border: none;
+    background: #fff;
+    padding: 0 10px;
+}
+
+.delete-left-icon {
+    font-size: 20px;
+    transition: all .3s;
+}
+
+.delete-left-icon:hover {
+    color: #ee1a1a;
 }
