@@ -2,19 +2,34 @@ $(document).ready(function () {
   let Idis = 2;
 
   $("#addItem").on("click", function () {
-    let Addmore = `<tr id="${Idis}" >
-                                    <td><input type="text" name="Item" placeholder="Item Name"></td>
-                                    <td><input type="text" name="description" placeholder="Description"></td>
-                                    <td><input type="number" name="Rate" placeholder="Price per unit"></td>
-                                    <td class="d-flex"><input type="number" name="Units" value="1"
-                                            placeholder="No. of units">
-                                        <button type="button" class="delete-left" title='Delete' onclick="deleteOne(${Idis})">
-                                            <i class="fa-solid fa-delete-left delete-left-icon"></i>
-                                        </button>
-                                    </td>
-                                </tr>`;
-    $("#tbody").append(Addmore);
-    Idis++;
+    const itemName = document.querySelector('input[name="Item"]').value.trim();
+    const description = document
+      .querySelector('input[name="description"]')
+      .value.trim();
+    const pricePerUnit = document
+      .querySelector('input[name="Rate"]')
+      .value.trim();
+    const numberOfUnits = document
+      .querySelector('input[name="Units"]')
+      .value.trim();
+
+    if (!itemName || !description || !pricePerUnit || !numberOfUnits) {
+      alert("Fill all Item fields first.");
+    } else {
+      let Addmore = `<tr id="${Idis}" >
+                                      <td><input type="text" name="Item" placeholder="Item Name"></td>
+                                      <td><input type="text" name="description" placeholder="Description"></td>
+                                      <td><input type="number" name="Rate" placeholder="Price per unit"></td>
+                                      <td class="d-flex"><input type="number" name="Units" value="1"
+                                              placeholder="No. of units">
+                                          <button type="button" class="delete-left" title='Delete' onclick="deleteOne(${Idis})">
+                                              <i class="fa-solid fa-delete-left delete-left-icon"></i>
+                                          </button>
+                                      </td>
+                                  </tr>`;
+      $("#tbody").append(Addmore);
+      Idis++;
+    }
   });
 });
 
