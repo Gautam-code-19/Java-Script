@@ -125,6 +125,7 @@ function loadInvoice() {
   $("#FinalTotal").text("₹ " + Math.round(FinalTotal));
   $("#DepositRequest").text("₹ " + Math.round(FinalTotal));
   $("#DepositDue").text("₹ " + Math.round(FinalTotal));
+  $("#TopDueAmount").text("₹ " + Math.round(FinalTotal));
   //
   $("#BillDetails").html(html);
   $("#print").show(2000);
