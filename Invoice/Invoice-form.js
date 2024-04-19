@@ -49,11 +49,17 @@ function saveFormData() {
     dueDate: $("#dueDate").val(),
 
     // Invoice items (assuming only one row in the table)
-    item: $("input[name='Item']").eq(0).val(),
-    description: $("input[name='description']").eq(0).val(),
-    rate: $("input[name='Rate']").eq(0).val(),
-    qty: $("input[name='Units']").eq(0).val(),
+    items: [],
   };
+  $("#tbody tr").each(function () {
+    let itemData = {
+      itemName: $(this).find("input[name='Item']").val(),
+      description: $(this).find("input[name='description']").val(),
+      rate: $(this).find("input[name='Rate']").val(),
+      qty: $(this).find("input[name='Units']").val(),
+    };
+    formData.items.push(itemData);
+  });
 
   localStorage.setItem("formData", JSON.stringify(formData));
   loadInvoice();
@@ -61,20 +67,18 @@ function saveFormData() {
 
 function loadInvoice() {
   const data = JSON.parse(localStorage.getItem("formData"));
-
   // Company details
-
   $("#YourComName").text(data.comName);
   $("#comAdd").text(data.address);
-  $("#city").text("city," + data.city);
+  $("#city").text("City: " + data.city);
   $("#Mypin").text(data.mypin);
   $("#Country").text(data.country);
   $("#Phone").text("+91 " + data.phone);
 
   // Client details
-  $("#clientNAme").text(data.clientName);
+  $("#clientName").text(data.clientName);
   $("#ClientAdd").text(data.clientAdd);
-  $("#ClientCity").text("city," + data.clientCity);
+  $("#ClientCity").text("City: " + data.clientCity);
   $("#ClientPin").text(data.clientPin);
   $("#ClientCountry").text(data.clientCountry);
   $("#ClientPhone").text("+91 " + data.clientPhone);
@@ -82,6 +86,23 @@ function loadInvoice() {
   // Invoice details
   $("#IssuedDate").text(data.issueDate);
   $("#InvoiceNumber").text(data.invoiceNumber);
-
   $("#DueDate").text(data.dueDate);
+
+  // Invoice items
+  let html = "";
+  data.items.forEach(function (item) {
+    html += `<tr class="tr">
+                <td class="td">${
+                  item.itemName
+                }<br><span style="font-size: 13px;">${
+      item.description
+    }</span></td>
+                <td class="td">&#x20b9; ${item.rate}<br><span>+Tax</span></td>
+                <td class="td">${item.qty}</td>
+                <td class="td">&#x20b9; ${item.rate * item.qty}</td>
+            </tr>`;
+  });
+
+  $("#BillDetails").html(html);
 }
+loadInvoice();
