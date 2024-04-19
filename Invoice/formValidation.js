@@ -47,6 +47,7 @@ $(document).ready(function () {
       clientPhone: {
         required: true,
         maxlength: 10,
+        minlength: 10,
       },
       // invoice Details..
       issueDate: {
@@ -115,6 +116,9 @@ $(document).ready(function () {
       clientCountry: {
         required: "Required.*",
       },
+    },
+    submitHandler: function (form) {
+      form.submit();
     },
   });
 });

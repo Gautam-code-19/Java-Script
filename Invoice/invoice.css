@@ -36,7 +36,15 @@ body {
     }
 }
 
+#print {
+    background: #fff;
+    display: none;
+}
 
+#Formdiv {
+    display: block;
+    visibility: visible;
+}
 
 .address {
     width: 190px;

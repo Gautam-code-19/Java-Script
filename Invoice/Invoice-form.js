@@ -25,45 +25,56 @@ function deleteOne(withid) {
 }
 
 function saveFormData() {
-  const formData = {
-    // Company details
-    comName: $("#comName").val(),
-    address: $("#address").val(),
-    city: $("#City").val(),
-    mypin: $("#mypin").val(),
-    country: $("#country").val(),
-    phone: $("#phone").val(),
+  if ($("#invoice-form").valid()) {
+    const formData = {
+      // Company details
+      comName: $("#comName").val(),
+      address: $("#address").val(),
+      city: $("#City").val(),
+      mypin: $("#mypin").val(),
+      country: $("#country").val(),
+      phone: $("#phone").val(),
 
-    // Client details
-    clientName: $("#clientName").val(),
-    clientAdd: $("#clientAdd").val(),
-    clientCity: $("#clientCity").val(),
-    clientPin: $("#clientPin").val(),
-    clientCountry: $("#client-country").val(),
-    clientPhone: $("#client-phone").val(),
+      // Client details
+      clientName: $("#clientName").val(),
+      clientAdd: $("#clientAdd").val(),
+      clientCity: $("#clientCity").val(),
+      clientPin: $("#clientPin").val(),
+      clientCountry: $("#client-country").val(),
+      clientPhone: $("#client-phone").val(),
 
-    // Invoice details
-    issueDate: $("#issue-date").val(),
-    invoiceNumber: $("#invoiceNumber").val(),
-    referanceNumber: $("#referanceNumber").val(),
-    dueDate: $("#dueDate").val(),
+      // Invoice details
+      issueDate: $("#issue-date").val(),
+      invoiceNumber: $("#invoiceNumber").val(),
+      referanceNumber: $("#referanceNumber").val(),
+      dueDate: $("#dueDate").val(),
 
-    // Invoice items (assuming only one row in the table)
-    items: [],
-  };
-  $("#tbody tr").each(function () {
-    let itemData = {
-      itemName: $(this).find("input[name='Item']").val(),
-      description: $(this).find("input[name='description']").val(),
-      rate: $(this).find("input[name='Rate']").val(),
-      qty: $(this).find("input[name='Units']").val(),
+      // Invoice items (assuming only one row in the table)
+      items: [],
+
+      //
     };
-    formData.items.push(itemData);
-  });
+    $("#tbody tr").each(function () {
+      let itemData = {
+        itemName: $(this).find("input[name='Item']").val(),
+        description: $(this).find("input[name='description']").val(),
+        rate: $(this).find("input[name='Rate']").val(),
+        qty: $(this).find("input[name='Units']").val(),
+      };
+      formData.items.push(itemData);
+    });
 
-  localStorage.setItem("formData", JSON.stringify(formData));
-  loadInvoice();
+    localStorage.setItem("formData", JSON.stringify(formData));
+    // $("#Formdiv").hide();
+
+    loadInvoice();
+  }
 }
+
+let subtotal = 0;
+let discount = 0;
+let Tax = 0;
+let FinalTotal = 0;
 
 function loadInvoice() {
   const data = JSON.parse(localStorage.getItem("formData"));
@@ -76,7 +87,7 @@ function loadInvoice() {
   $("#Phone").text("+91 " + data.phone);
 
   // Client details
-  $("#clientName").text(data.clientName);
+  $("#clientNAme").text(data.clientName);
   $("#ClientAdd").text(data.clientAdd);
   $("#ClientCity").text("City: " + data.clientCity);
   $("#ClientPin").text(data.clientPin);
@@ -91,6 +102,12 @@ function loadInvoice() {
   // Invoice items
   let html = "";
   data.items.forEach(function (item) {
+    // Final Billing
+    subtotal += item.rate * item.qty;
+    discount = subtotal * 0.1;
+    Tax = (subtotal - discount) * 0.18;
+    FinalTotal = subtotal - discount + Tax;
+
     html += `<tr class="tr">
                 <td class="td">${
                   item.itemName
@@ -102,7 +119,13 @@ function loadInvoice() {
                 <td class="td">&#x20b9; ${item.rate * item.qty}</td>
             </tr>`;
   });
-
+  $("#Subtotal").text("₹ " + subtotal);
+  $("#Discount").text("-₹ " + Math.round(discount));
+  $("#Tax").text("+₹ " + Math.round(Tax));
+  $("#FinalTotal").text("₹ " + Math.round(FinalTotal));
+  $("#DepositRequest").text("₹ " + Math.round(FinalTotal));
+  $("#DepositDue").text("₹ " + Math.round(FinalTotal));
+  //
   $("#BillDetails").html(html);
+  $("#print").show(2000);
 }
-loadInvoice();

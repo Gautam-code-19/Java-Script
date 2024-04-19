@@ -31,17 +31,22 @@
 
 <body>
 
-    <div class="container d-flex flex-wrap ">
-        <form action="" id="invoice-form" class="d-flex flex-wrap ">
+    <div class="container d-flex flex-wrap  mb-5">
+        <div class="container margin-l-r d-flex Client-details justify-content-center ">
+            <div>
+                <p class="h1 text-primary">Create Free Invoice</p>
+            </div>
+        </div>
+        <form action="" id="invoice-form" method="post" class="d-flex flex-wrap ">
             <div class="container d-flex mt-5 gap-2">
 
                 <!-- company details -->
 
                 <div class=" Company-details">
                     <div class="container">
-                        <h2 class=" h5">Company Details:</h2>
+                        <h2 class=" h5 text-primary">Company Details:</h2>
                     </div>
-                    <div class="container-fluid d-flex flex-wrap gap-1">
+                    <div class=" container-fluid d-flex flex-wrap gap-1">
                         <label for="comName">Your Company Name<br>
                             <input type="text" name="comName" id="comName" placeholder="Your Company Name"></label>
 
@@ -59,7 +64,7 @@
                         </label>
 
                         <label class="label" for="phone">Phone
-                            <input type="number" name="myPhone" id="phone" placeholder="Enter Phone Number" max="10">
+                            <input type="number" name="myPhone" id="phone" placeholder="Enter Phone Number">
                         </label>
                     </div>
                 </div>
@@ -68,10 +73,10 @@
 
                 <div class=" Client-details">
                     <div class="container">
-                        <h2 class=" h5">Client Details:</h2>
+                        <h2 class=" h5 text-primary">Client Details:</h2>
                     </div>
-                    <div class="container-fluid d-flex flex-wrap gap-1 ">
-                        <label for="clientName">Client name
+                    <div class=" container-fluid d-flex flex-wrap gap-1 ">
+                        <label for=" clientName">Client name
                             <input type="text" name="clientName" id="clientName" placeholder="Client Name">
                         </label>
 
@@ -103,7 +108,7 @@
             <!-- invoice details -->
 
             <div class="container-fluid d-flex flex-wrap Client-details margin-l-r">
-                <h2 class="container h5">Invoice Items:</h2>
+                <h2 class="container h5 text-primary ">Invoice Items:</h2>
 
                 <div class="container d-flex gap-1">
                     <label for="issue-date">Issue Date
@@ -156,8 +161,9 @@
                 </div>
                 <div class="container margin-l-r d-flex Client-details justify-content-center">
                     <div>
-                        <button type="submit" onclick="saveFormData()"><i class="fa-solid fa-folder-plus"></i>&nbsp;
-                            Invoice</button>
+                        <button type="submit" onclick="saveFormData()" title="Submit" value="Create Invoice"> <i class="
+                            fa-solid fa-folder-plus"></i> &nbsp;
+                            Generate Invoice</button>
 
                     </div>
                 </div>
@@ -165,8 +171,6 @@
 
         </form>
     </div>
-
-
 
 
 
@@ -263,27 +267,27 @@
                     <tbody>
                         <tr class="text-right">
                             <td>Subtotal</td>
-                            <td class="cell">&#x20b9;23456</td>
+                            <td class="cell" id="Subtotal">&#x20b9;23456</td>
                         </tr>
                         <tr class="text-right">
                             <td>Discount</td>
-                            <td class="text-right">-&#x20b9;345</td>
+                            <td class="text-right" id="Discount">-&#x20b9;345</td>
                         </tr>
                         <tr class="tr text-right">
                             <td>Tax</td>
-                            <td class="text-right">+&#x20b9;70</td>
+                            <td class="text-right" id="Tax">+&#x20b9;70</td>
                         </tr>
                         <tr class=" text-right">
                             <td>Total</td>
-                            <td>&#x20b9;34567</td>
+                            <td id="FinalTotal">&#x20b9;34567</td>
                         </tr>
                         <tr class="text-right">
                             <td>Deposit requested</td>
-                            <td>&#x20b9;2622</td>
+                            <td id="DepositRequest">&#x20b9;2622</td>
                         </tr>
                         <tr class="text-right tableOne text-bold">
                             <td>Deposit Due</td>
-                            <td>&#x20b9;2622</td>
+                            <td id="DepositDue">&#x20b9;2622</td>
                         </tr>
                     </tbody>
                 </table>
@@ -301,8 +305,11 @@
                 <p>Please pay within 30 days using the link in your invoice email.</p>
             </div>
         </div>
-        <button class="btn btn-primary mt-5" id="printbtn" onclick="window.print()"><i class="fa-solid fa-print"></i>
-            Print</button>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-primary mt-5 print" id="printbtn" onclick="window.print()"><i
+                    class="fa-solid fa-print"></i>
+                Print / Download</button>
+        </div>
     </section>
 
 </body>

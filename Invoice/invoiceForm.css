@@ -48,6 +48,11 @@ Button[type="submit"]:hover {
     background-color: #45a049;
 }
 
+.print {
+    padding: 15px 40px;
+    font-size: 20px;
+    border: none;
+}
 
 /* Optional: Style for error messages */
 .error {
